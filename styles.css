@@ -3,9 +3,9 @@
 :root {
     --main-dark-color: #525252;
     --dark-shadow:#262626;
-    --light-blue: #a5b4fc;
-    --dark-blue: #6366f1;
-    --darker-blue: #3730a3;
+    --light-blue: #81d0fe;
+    --dark-blue: #039be5;
+    --darker-blue:  #0271b1;
     --white: #f8fafc;
 }
 
@@ -22,7 +22,7 @@ body {
 
 .page-container {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
@@ -34,9 +34,14 @@ body {
     grid-column: 1/2;
     grid-row: 1/3;
     display: grid;
-    grid-template-rows: 3fr repeat(10, 1fr) 5fr;
+    padding-bottom: 20px;
+    grid-template-rows: 4fr repeat(6, 1fr) 4fr repeat(3, 1fr);
     align-items: center;
-    overflow: hidden;
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    box-sizing: border-box;
+
 }
 
 .header {
@@ -86,13 +91,19 @@ body {
 .trending,
 .announcements {
     border-radius: 15px;
+    border-left: 5px solid var(--dark-blue);
     background-color: var(--light-blue);
     color: black;
     
 }
 
 .card {
+    font-size: 1rem;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 input {
@@ -102,6 +113,7 @@ input {
     width: 90%;
     border: none;
     border-style: none;
+    outline-style: none;
     border-radius: 15px;
     background-color: var(--main-dark-color);
     color: var(--white);
@@ -135,15 +147,15 @@ input {
 }
 
 .logo {
-    height: 3rem;
+    height: 4rem;
     color: var(--white);
 }
 
 .icon {
     font-size: 1.1rem;
-    width: calc(100% - 30px);
+    width: calc(100% - 25px);
     height: 50px;
-    padding-left: 30px;
+    padding-left: 25px;
     display: grid;
     grid-template-columns: 1fr 5fr;
     align-items: center;
@@ -153,8 +165,8 @@ input {
 }
 
 .icon-logo {
-    padding-left: 20px;
-    width: calc(100% - 20px);
+    padding-left: 30px;
+    width: calc(100% - 30px);
     display: flex;
     align-items: center;
 }
@@ -189,7 +201,7 @@ svg {
 }
 
 .small-avatar {
-    height: 60px;
+    height: 50px;
     width: auto;
 }
 
@@ -208,4 +220,14 @@ svg {
 
 .username {
     font-size: 1.4rem;
+}
+
+.text-box h3 {
+    margin-top: 0;
+}
+
+.card-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
 }
